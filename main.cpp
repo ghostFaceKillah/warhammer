@@ -3,26 +3,26 @@
 #include <cstdlib>
 using namespace std;
 
-
-
-unsigned int PRNG(unsigned int nSeed)
-{
-  nSeed = (8253729 * nSeed + 2396403);
-  return nSeed  % 32767;
+int irand(int min, int max) {
+      return ((double)rand() / ((double)RAND_MAX + 1.0)) * (max - min + 1) + min;
 }
-                                        
+
+class TrooperType {
+
+  public:
+    int WS, BS, W, Ld;
+};
+
 
 int main() {
-  unsigned int nSeed = time(0);
-  srand(nSeed);
+  srand(time(0));
   cout << "seed is" << time(0) << endl;
-  int i;
-  int number;
+  int i,number;
   for (i = 0; i < 4; i++) {
-    nSeed = PRNG(nSeed);
-    srand(nSeed);
-    number = rand()%8;  // generate a random number
+    number = irand(1,6);
     cout << "number is " << number << endl;
   }
+  TrooperType Orc;
+  Orc.WS = 4;
 }
 
