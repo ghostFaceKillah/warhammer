@@ -16,8 +16,7 @@ public:
   int W;
   int T;
   int Ld;
-  
-public:
+  TrooperType() { WS = 1; BS =1; W=1; T=3;  Ld = 7; }
   TrooperType(int WS, int BS, int W, int T, int Ld) : WS(WS), BS(BS), W(W), T(T), Ld(Ld) { }
 };
 
@@ -34,28 +33,15 @@ public:
 };
 
 void declareTroopers(std::vector<TrooperType>* troopers) {
-  /*
-  TrooperType Orc;
-  Orc.WS = 3;
-  Orc.T = 4;
-  Orc.W = 1 ;
-  Orc.Ld = 7;
-  */
   
-  troopers->push_back(TrooperType(3,3,4,1,7)); // ustaw sobie te liczby tak, żeby sie zgadzały
-  troopers->push_back(TrooperType(3,1,4,1,7));
-  troopers->push_back(TrooperType(3,2,4,1,7));
-  troopers->push_back(TrooperType(3,100,4,1,7));
+  // troopers->push_back(TrooperType(3,3,4,1,7)); // one way 
   
-  /*
   TrooperType Elf;
   Elf.WS = 4;
   Elf.T = 3;
   Elf.W = 1;
   Elf.Ld = 9;
-  
   troopers->push_back(Elf);
-  */
 };
 
 int main() {
@@ -65,7 +51,7 @@ int main() {
   
   std::vector<TrooperType> troopers; 
   declareTroopers(&troopers);
-
+  cout << troopers[0].W << endl;
   // some action
 
 }
